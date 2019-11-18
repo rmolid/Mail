@@ -55,4 +55,14 @@ public class MailClient
         MailItem item = new MailItem(user, to, message);
         server.post(item);
     }
+    
+    /**
+     * Metodo que no requiere parámetros y devuelve el número de correos electrónicos
+     * que el usuario de ese cliente tiene pendientes de descarga en el servidor.
+     */
+    public int getNumberOfMessageInServer()
+    {
+        return server.howManyMailItems(user);
+    }
+    
 }
